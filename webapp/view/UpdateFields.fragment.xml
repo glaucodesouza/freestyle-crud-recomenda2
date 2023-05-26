@@ -1,0 +1,35 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+>
+      <Dialog
+          id="dialog"
+          title="Hello">
+
+          <Text text="List 3" />
+          <ComboBox id="_IDGenComboBox3"
+              items="{ 
+                path: '/Z270IMPLGUIDANCESet',
+                sorter: { path: 'Implementationguidancetext' }
+                }">
+              <c:Item 
+                id="_IDGenItem3" 
+                key="{Implementationguidance}" 
+                text="{Implementationguidancetext}" />
+          </ComboBox> 
+          <Button
+              activeIcon=""
+              ariaHasPopup="None"
+              enabled="true"
+              icon="empty string"
+              iconDensityAware="true"
+              iconFirst="true"
+              text="Update data"
+              textDirection="Inherit"
+              type="Default"
+              width=""
+              press="onUpdatePress"
+          />
+          
+      </Dialog>
+</c:FragmentDefinition>
