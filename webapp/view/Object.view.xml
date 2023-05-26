@@ -1,0 +1,53 @@
+<mvc:View
+    controllerName="freestylecrudrecomenda.controller.Object"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:f="sap.ui.layout.form">
+
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false"
+        busy="{objectView>/busy}"
+        busyIndicatorDelay="{objectView>/delay}">
+
+        <semantic:titleHeading>
+            <Title
+                text="{RecoCode}"
+                level="H2"/>
+        </semantic:titleHeading>
+
+        <semantic:headerContent>
+            <Text text="Recomendação" />
+        </semantic:headerContent>
+
+        <f:SimpleForm
+            editable="true"
+            layout="ResponsiveGridLayout"
+            title="Recomendação"
+            labelSpanXL="3"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="4"
+            emptySpanL="4"
+            emptySpanM="4"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false"
+            > 
+
+                <Label text="Cód. de Recomendação" />       <Input id="inpCodigo"       value="{RecoCode}"    enabled="false"/>
+                <Label text="Descrição de Recomendação" />  <Input id="inpDescricao"    value="{RecoDesc}" enabled="false"/>
+                <Label text="Cód. Impl. Guidance" />        <Input id="inpKwmeng"       value="{Implementationguidance}"    enabled="false"/>
+                <Label text="Texto de Impl. Guidance" />    <Input id="inpMeins"        value="{Implementationguidancetext}"     enabled="false"/>
+
+        </f:SimpleForm>
+
+    </semantic:SemanticPage>
+
+</mvc:View>
