@@ -262,8 +262,13 @@ sap.ui.define([
       },
 
       //Fragment function
-      onCloseDialog: function() {
-        this.byId("dialogo").close();
+      onCloseDialog: function(oEvent) {
+        oEvent.getSource().getParent().close();
+        // this.byId("dialogo").close();
+      },
+
+      onAfterDialogClose: function(oEvent) { //remove contents of dialog after it has been closed
+        oEvent.getSource().destroy();
       },
 
       onUpdatePress: function(oEvent) {

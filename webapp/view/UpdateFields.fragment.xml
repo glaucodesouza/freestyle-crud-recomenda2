@@ -1,51 +1,52 @@
-<core:FragmentDefinition 
-	xmlns="sap.m"
-	xmlns:core="sap.ui.core"
->
-  <Dialog
-      id="dialogo"
-      title="Choose new informations">
-    <content>
-      <Text text="Implementation" />
-      <ComboBox id="_IDGenComboBox3"
-          items="{ 
-            path: '/Z270IMPLGUIDANCESet',
-            sorter: { path: 'Implementationguidancetext' }
-            }">
-          <core:Item 
-            id="_IDGenItem3" 
-            key="{Implementationguidance}" 
-            text="{Implementationguidancetext}" />
-      </ComboBox> 
-    </content>
-    <buttons>
-      <Button
-          activeIcon=""
-          ariaHasPopup="None"
-          enabled="true"
-          icon="empty string"
-          iconDensityAware="true"
-          iconFirst="true"
-          text="Update data"
-          textDirection="Inherit"
-          type="Default"
-          width=""
-          press="onUpdatePress"
-      />
-      <Button
-          activeIcon=""
-          ariaHasPopup="None"
-          enabled="true"
-          icon=""
-          iconDensityAware="true"
-          iconFirst="true"
-          text="Cancel"
-          textDirection="Inherit"
-          type="Default"
-          width=""
-          press=".onCloseDialog"
-      />
-    </buttons>
-      
-  </Dialog>
-</core:FragmentDefinition>
+  <core:FragmentDefinition 
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+  >
+    <Dialog
+        id="dialogo"
+        title="Choose new informations"
+        afterClose="onAfterDialogClose">
+      <content>
+        <Text id="_IDGenText10" text="Implementation" />
+        <ComboBox id="_IDGenComboBox3"
+            items="{ 
+              path: '/Z270IMPLGUIDANCESet',
+              sorter: { path: 'Implementationguidancetext' }
+              }">
+            <core:Item 
+              id="_IDGenItem3" 
+              key="{Implementationguidance}" 
+              text="{Implementationguidancetext}" />
+        </ComboBox> 
+      </content>
+      <buttons>
+        <Button id="_IDGenButton1"
+            activeIcon=""
+            ariaHasPopup="None"
+            enabled="true"
+            icon="empty string"
+            iconDensityAware="true"
+            iconFirst="true"
+            text="Update data"
+            textDirection="Inherit"
+            type="Default"
+            width=""
+            press="onUpdatePress"
+        />
+        <Button id="_IDGenButton2"
+            activeIcon=""
+            ariaHasPopup="None"
+            enabled="true"
+            icon=""
+            iconDensityAware="true"
+            iconFirst="true"
+            text="Cancel"
+            textDirection="Inherit"
+            type="Default"
+            width=""
+            press=".onCloseDialog"
+        />
+      </buttons>
+        
+    </Dialog>
+  </core:FragmentDefinition>
