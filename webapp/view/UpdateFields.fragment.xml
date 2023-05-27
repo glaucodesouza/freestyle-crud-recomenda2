@@ -1,35 +1,51 @@
-<c:FragmentDefinition
+<core:FragmentDefinition 
 	xmlns="sap.m"
-	xmlns:c="sap.ui.core"
+	xmlns:core="sap.ui.core"
 >
-      <Dialog
-          id="dialog"
-          title="Hello">
-
-          <Text text="List 3" />
-          <ComboBox id="_IDGenComboBox3"
-              items="{ 
-                path: '/Z270IMPLGUIDANCESet',
-                sorter: { path: 'Implementationguidancetext' }
-                }">
-              <c:Item 
-                id="_IDGenItem3" 
-                key="{Implementationguidance}" 
-                text="{Implementationguidancetext}" />
-          </ComboBox> 
-          <Button
-              activeIcon=""
-              ariaHasPopup="None"
-              enabled="true"
-              icon="empty string"
-              iconDensityAware="true"
-              iconFirst="true"
-              text="Update data"
-              textDirection="Inherit"
-              type="Default"
-              width=""
-              press="onUpdatePress"
-          />
-          
-      </Dialog>
-</c:FragmentDefinition>
+  <Dialog
+      id="dialogo"
+      title="Choose new informations">
+    <content>
+      <Text text="Implementation" />
+      <ComboBox id="_IDGenComboBox3"
+          items="{ 
+            path: '/Z270IMPLGUIDANCESet',
+            sorter: { path: 'Implementationguidancetext' }
+            }">
+          <core:Item 
+            id="_IDGenItem3" 
+            key="{Implementationguidance}" 
+            text="{Implementationguidancetext}" />
+      </ComboBox> 
+    </content>
+    <buttons>
+      <Button
+          activeIcon=""
+          ariaHasPopup="None"
+          enabled="true"
+          icon="empty string"
+          iconDensityAware="true"
+          iconFirst="true"
+          text="Update data"
+          textDirection="Inherit"
+          type="Default"
+          width=""
+          press="onUpdatePress"
+      />
+      <Button
+          activeIcon=""
+          ariaHasPopup="None"
+          enabled="true"
+          icon=""
+          iconDensityAware="true"
+          iconFirst="true"
+          text="Cancel"
+          textDirection="Inherit"
+          type="Default"
+          width=""
+          press=".onCloseDialog"
+      />
+    </buttons>
+      
+  </Dialog>
+</core:FragmentDefinition>
