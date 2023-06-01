@@ -27,6 +27,7 @@
                           descending: false
                       }
                   }"
+                  mode="SingleSelect"
                   noDataText="{worklistView>/tableNoDataText}"
                   busyIndicatorDelay="{worklistView>/tableBusyDelay}"
                   growing="true"
@@ -34,11 +35,11 @@
                   updateFinished=".onUpdateFinished">
 
                   <headerToolbar>
-                      <OverflowToolbar id="_IDGenOverflowToolbar1">
+                      <OverflowToolbar id="_IDGenOverflowToolbar1"> 
                           <Title
                               id="tableHeader"
                               text="{worklistView>/worklistTableTitle}"
-                              level="H3"/>
+                              level="H3"/> 
                           <ToolbarSpacer id="_IDGenToolbarSpacer1" />
                           <SearchField
                               id="searchField"

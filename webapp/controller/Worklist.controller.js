@@ -272,11 +272,67 @@ sap.ui.define([
       },
 
       onUpdatePress: function(oEvent) {
+        // get Comcobox Status value
         var ComboboxStatusSelected = this.getView().mAggregations.dependents[1].mAggregations.content[1].mProperties;
         var StatusCodeSel = ComboboxStatusSelected.selectedKey;
         var StatusDescSel = ComboboxStatusSelected.value;
-        debugger;
 
+        // get Comcobox Impl.Code value
+        var ComboboxImplCodeSelected = this.getView().mAggregations.dependents[1].mAggregations.content[3].mProperties;
+        var ImplCodeSel = ComboboxImplCodeSelected.selectedKey;
+        var ImplDescSel = ComboboxImplCodeSelected.value;
+
+        if (StatusCodeSel == '' || ImplCodeSel == '') {
+          sap.m.MessageToast.show("There is no information to update !");
+          return;
+        }
+        // get contend of selected line 
+        var oView = this.getView();
+        var oTable = oView.byId("table");
+        var oItem = oTable.getSelectedItems();
+
+        if (oItem.length == 0) {
+          sap.m.MessageToast.show("Select a line !");
+          return;
+        }
+        var item = oItem[0];
+        var context = item.getBindingContext();
+        var path = context.getPath();
+        var line = context.getProperty(null, context);
+        
+        var data = {
+          RecoCode : line.RecoCode,
+          RecoDesc : line.RecoDesc,
+          Implementationguidance      : ImplCodeSel,
+          Implementationguidancetext  : ImplDescSel,
+          StatusCode : StatusCodeSel,
+          StatusDesc : StatusDescSel
+        }
+
+        var oModel = this.getView().getModel();
+        
+        oModel.update(path, data, {
+            success: function(){
+              // your success handler
+              sap.m.MessageToast.show("Record updated with success !");
+              oModel.refresh();
+            }.bind(this), 
+            error:   function(){
+              // your error handler
+              sap.m.MessageToast.show("Error trying to update !");
+            }.bind(this), 
+        });
+
+        // var oSource = oEvent.getSource();
+        // var oParent = oSource.getParent();
+        // var bc = oParent.getBindingContext();
+        // var path = bc.getPath();
+        // var obj = bc.getObject();
+        
+        //yourODataModel.update(oItem.getBindingContextPath(), oEntry, {
+        //    success: function(){}, // your success handler
+        //    error:   function(){} // your error handler
+        //});
         
 
       },
