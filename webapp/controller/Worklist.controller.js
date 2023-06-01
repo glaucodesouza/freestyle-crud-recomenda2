@@ -272,7 +272,13 @@ sap.ui.define([
       },
 
       onUpdatePress: function(oEvent) {
+        var ComboboxStatusSelected = this.getView().mAggregations.dependents[1].mAggregations.content[1].mProperties;
+        var StatusCodeSel = ComboboxStatusSelected.selectedKey;
+        var StatusDescSel = ComboboxStatusSelected.value;
+        debugger;
+
         
+
       },
 
     });

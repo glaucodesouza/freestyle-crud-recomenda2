@@ -7,6 +7,17 @@
         title="Choose new informations"
         afterClose="onAfterDialogClose">
       <content>
+        <Text id="_IDGenText11" text="Status" />
+        <ComboBox id="ComboboxStatus"
+            items="{ 
+              path: '/Z270RECOMENDSTATSet',
+              sorter: { path: 'StatusDesc' }
+              }">
+            <core:Item 
+              id="_IDGenItem" 
+              key="{StatusCode}" 
+              text="{StatusDesc}" />
+        </ComboBox> 
         <Text id="_IDGenText10" text="Implementation" />
         <ComboBox id="_IDGenComboBox3"
             items="{ 

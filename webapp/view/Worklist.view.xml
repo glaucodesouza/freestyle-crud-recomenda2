@@ -65,8 +65,11 @@
                       <Column id="unitNumberColumn" hAlign="End">
                           <Text text="Descrição de Recomendação" id="unitNumberColumnTitle"/>
                       </Column>
-                      <Column id="unitNumberColumn2" hAlign="End">
+                      <Column id="ImplementationDesc" hAlign="End">
                           <Text text="Texto de Impl. Guidance" id="unitNumberColumnTitle2"/>
+                      </Column>
+                      <Column id="StatusDesc" hAlign="End">
+                          <Text text="Status Description" id="StatusDescTxt"/>
                       </Column>
                   </columns>
 
@@ -81,6 +84,8 @@
                                   text="{RecoDesc}"/>
                               <Text id="_IDGenText2"
                                   text="{Implementationguidancetext}"/>
+                              <Text id="_IDGenText3" 
+                                  text="{StatusDesc}"/>
                           </cells>
                       </ColumnListItem>
                   </items>
